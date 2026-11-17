@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: arara-db
+    environment:
+      POSTGRES_DB: ${DB_NAME:-arara}
+      POSTGRES_USER: ${DB_USER:-arara}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no arquivo .env}
+    ports:
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - arara-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-arara} -d ${DB_NAME:-arara}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  arara-data:
