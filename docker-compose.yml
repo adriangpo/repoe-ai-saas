@@ -1,3 +1,5 @@
+name: repoe-ai
+
 services:
   db:
     image: postgres:17-alpine
