@@ -157,7 +157,11 @@ export function buildJevState(m: VariantMetrics, ctx: JevContext): string {
     `Estoque atual: ${m.quantity} un.; estoque mínimo definido pela loja: ${m.minQuantity} un.`,
     `Vendas nos últimos 30 dias: ${m.sold30} un.; nos 30 dias anteriores: ${m.soldPrev30} un.`,
     m.daysSinceLastSale === null ? "Esta variante nunca foi vendida." : `Última venda há ${m.daysSinceLastSale} dia(s).`,
-    Number.isFinite(cobertura) ? `No ritmo atual, o estoque dura cerca de ${Math.round(cobertura)} dias.` : "No ritmo atual, o estoque não gira.",
+    m.quantity === 0
+      ? "A peça está esgotada."
+      : Number.isFinite(cobertura)
+        ? `No ritmo atual, o estoque dura cerca de ${Math.round(cobertura)} dias.`
+        : "No ritmo atual, o estoque não gira.",
     ctx.observacao ? `Observação do dono da loja: ${ctx.observacao}` : "",
   ];
   return partes.filter(Boolean).join(" ");
