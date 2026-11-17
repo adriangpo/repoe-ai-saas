@@ -3,7 +3,7 @@
 import { pool, transaction, query } from "../db.js";
 import { hashPassword } from "../auth.js";
 
-const DEMO_EMAIL = "dona@arara.demo";
+const DEMO_EMAIL = "dona@repoeai.demo";
 const DEMO_SENHA = "demo1234"; // dado fictício, apenas para a demonstração local
 
 // Gerador pseudoaleatório com semente fixa: os dados saem iguais em toda execução.
@@ -73,7 +73,7 @@ async function main() {
       c,
     );
     const [vend] = await query(
-      "INSERT INTO users (store_id, name, email, password_hash, role) VALUES ($1,'Bruno (vendedor)','vendedor@arara.demo',$2,'vendedor') RETURNING id",
+      "INSERT INTO users (store_id, name, email, password_hash, role) VALUES ($1,'Bruno (vendedor)','vendedor@repoeai.demo',$2,'vendedor') RETURNING id",
       [store.id, hash],
       c,
     );
@@ -144,6 +144,7 @@ async function main() {
         }
         if (!carrinho.size) continue;
         const quando = diasAtras(d, inteiro(9, 19));
+        if (quando > new Date()) continue; // hoje: só vendas em horários que já passaram
         const total = [...carrinho].reduce((s, [v, q]) => s + v.price * q, 0);
         const vendedor = rand() < 0.5 ? dona.id : vend.id;
         const [sale] = await query(
@@ -168,7 +169,7 @@ async function main() {
     console.log(`Loja de demonstração criada: ${variantes.length} variantes, ${vendas} vendas em 60 dias.`);
   });
 
-  console.log(`Login: ${DEMO_EMAIL} / ${DEMO_SENHA}  (vendedor: vendedor@arara.demo / ${DEMO_SENHA})`);
+  console.log(`Login: ${DEMO_EMAIL} / ${DEMO_SENHA}  (vendedor: vendedor@repoeai.demo / ${DEMO_SENHA})`);
   await pool.end();
 }
 

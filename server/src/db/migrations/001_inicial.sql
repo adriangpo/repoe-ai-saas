@@ -1,4 +1,4 @@
--- Arara: estrutura inicial.
+-- Repõe Aí!: estrutura inicial.
 -- Cada loja (cliente do SaaS) é um "tenant": todas as tabelas de dados
 -- carregam store_id e toda consulta da API filtra por ele.
 

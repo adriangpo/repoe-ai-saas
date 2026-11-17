@@ -1,8 +1,8 @@
-# Arara
+# Repõe Aí!
 
 **Estoque por grade, vendas no balcão e reposição inteligente para lojas de roupas, oferecido como SaaS.**
 
-Lojas de roupas pequenas controlam o estoque de cabeça, no caderno ou em planilhas. Como cada peça existe em vários tamanhos e cores, é comum faltar justamente o "M preto" que mais vende, enquanto peças de outra estação ficam paradas ocupando espaço e dinheiro. O Arara organiza o estoque por variante (tamanho + cor), baixa o estoque a cada venda e tem um **assistente de reposição** que indica o que repor, quanto comprar e o que colocar em promoção. Esse assistente usa o **JEV** e, se ele não estiver disponível, as regras locais do sistema assumem.
+Lojas de roupas pequenas controlam o estoque de cabeça, no caderno ou em planilhas. Como cada peça existe em vários tamanhos e cores, é comum faltar justamente o "M preto" que mais vende, enquanto peças de outra estação ficam paradas ocupando espaço e dinheiro. O Repõe Aí! organiza o estoque por variante (tamanho + cor), baixa o estoque a cada venda e tem um **assistente de reposição** que indica o que repor, quanto comprar e o que colocar em promoção. Esse assistente usa o **JEV** e, se ele não estiver disponível, as regras locais do sistema assumem.
 
 Trabalho da disciplina **Tópicos Especiais em Informática** (FATEC).
 
@@ -64,8 +64,8 @@ npm run dev     # API em http://localhost:3333 e interface em http://localhost:5
 
 Abra **http://localhost:5173** e entre com a loja de demonstração (dados fictícios, criados só no banco local):
 
-- Dona: `dona@arara.demo` / `demo1234`
-- Vendedor: `vendedor@arara.demo` / `demo1234`
+- Dona: `dona@repoeai.demo` / `demo1234`
+- Vendedor: `vendedor@repoeai.demo` / `demo1234`
 
 Para voltar os dados de demonstração ao estado inicial: `npm run db:seed`.
 
@@ -86,7 +86,7 @@ Ao iniciar, a API mostra `JEV: chave configurada (OpenRouter)` ou avisa que vai 
 Se você já tem um PostgreSQL instalado, crie um banco vazio e informe a conexão no `.env` antes do `npm run setup`:
 
 ```
-DATABASE_URL=postgres://usuario:senha@localhost:5432/arara
+DATABASE_URL=postgres://usuario:senha@localhost:5432/repoeai
 ```
 
 ### Outros comandos

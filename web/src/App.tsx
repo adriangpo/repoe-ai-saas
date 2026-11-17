@@ -21,7 +21,7 @@ export function App() {
     <div className="shell">
       <nav className="sidebar">
         <div className="logo">
-          <Logo /> Arara
+          <Logo />
         </div>
         <NavLink to="/" end>Painel</NavLink>
         <NavLink to="/vender">Vender</NavLink>

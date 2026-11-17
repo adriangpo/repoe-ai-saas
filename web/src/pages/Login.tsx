@@ -29,10 +29,9 @@ export function LoginPage() {
     <div className="auth">
       <section className="pitch">
         <div className="row" style={{ marginBottom: 24 }}>
-          <Logo size={40} />
-          <strong style={{ fontSize: "1.5rem", color: "#fff" }}>Arara</strong>
+          <Logo size={34} />
         </div>
-        <h1>Saiba o que tem na arara antes do cliente perguntar.</h1>
+        <h1>Saiba o que repor antes do cliente pedir.</h1>
         <p style={{ fontSize: "1.05rem", maxWidth: 520 }}>
           Estoque por tamanho e cor, venda no balcão com baixa automática e um assistente que diz o que repor e o que colocar em promoção.
         </p>
@@ -71,7 +70,7 @@ export function LoginPage() {
             {enviando ? "Aguarde…" : modo === "entrar" ? "Entrar" : "Criar conta grátis"}
           </button>
           <p className="small muted" style={{ marginTop: 14, textAlign: "center" }}>
-            {modo === "entrar" ? "Ainda não usa o Arara? " : "Já tem conta? "}
+            {modo === "entrar" ? "Ainda não tem conta? " : "Já tem conta? "}
             <a href="#" onClick={(e) => { e.preventDefault(); setErro(null); setModo(modo === "entrar" ? "cadastrar" : "entrar"); }}>
               {modo === "entrar" ? "Cadastre sua loja" : "Entrar"}
             </a>

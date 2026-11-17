@@ -39,7 +39,16 @@ p { margin: 0 0 8px; }
 /* Layout */
 .shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
 .sidebar { background: #12312d; color: #d8e6e3; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; }
-.logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.25rem; color: #fff; padding: 0 8px 18px; }
+.logo { display: flex; align-items: center; padding: 4px 8px 22px; }
+
+/* Marca Repõe Aí! */
+.brand { display: inline-flex; align-items: center; gap: 0.25em; line-height: 1; }
+.brand .brand-mark { flex: none; }
+.brand-word { display: inline-flex; align-items: center; padding: 0.15em 0; transform: rotate(-4deg) skewX(-6deg); font-family: "Arial Black", "Segoe UI Black", system-ui, sans-serif; font-weight: 900; letter-spacing: -0.03em; white-space: nowrap; }
+.brand-word .rep { color: #fff; text-shadow: 0.07em 0.07em 0 #0f766e; }
+.brand-word .ai { display: inline-block; margin-left: 0.2em; padding: 0.1em 0.3em 0.14em; border-radius: 0.28em; background: #5eead4; color: #12312d; box-shadow: 0.09em 0.11em 0 #0b4f49; }
+.brand.light .rep { color: #12312d; text-shadow: 0.07em 0.07em 0 #5eead4; }
+.brand.light .ai { box-shadow: 0.09em 0.11em 0 #12312d; }
 .sidebar a { color: #cfe0dc; padding: 9px 10px; border-radius: 8px; display: block; }
 .sidebar a:hover { background: rgba(255, 255, 255, 0.07); text-decoration: none; }
 .sidebar a.active { background: rgba(255, 255, 255, 0.14); color: #fff; font-weight: 600; }

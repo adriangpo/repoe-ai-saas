@@ -52,7 +52,7 @@ export function NewProductPage() {
       <div className="page-head">
         <div>
           <h1>Novo produto</h1>
-          <p className="muted">Informe os tamanhos e as cores: o Arara cria todas as combinações da grade.</p>
+          <p className="muted">Informe os tamanhos e as cores: o Repõe Aí! cria todas as combinações da grade.</p>
         </div>
         <Link to="/produtos">← Voltar</Link>
       </div>

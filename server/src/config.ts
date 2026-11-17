@@ -9,7 +9,7 @@ dotenv.config({ path: path.join(raiz, ".env"), quiet: true });
 
 function montarDatabaseUrl(): string {
   if (process.env.DATABASE_URL) return process.env.DATABASE_URL;
-  const { DB_USER = "arara", DB_PASSWORD = "", DB_HOST = "localhost", DB_PORT = "5433", DB_NAME = "arara" } = process.env;
+  const { DB_USER = "repoeai", DB_PASSWORD = "", DB_HOST = "localhost", DB_PORT = "5433", DB_NAME = "repoeai" } = process.env;
   return `postgres://${encodeURIComponent(DB_USER)}:${encodeURIComponent(DB_PASSWORD)}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 }
 

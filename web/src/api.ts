@@ -1,6 +1,6 @@
 // Cliente HTTP da interface: toda comunicação com a API passa por aqui.
 
-const TOKEN_KEY = "arara.token";
+const TOKEN_KEY = "repoe-ai.token";
 
 export class ApiError extends Error {
   constructor(public status: number, message: string, public codigo?: string) {

@@ -1,12 +1,30 @@
 import { useCallback, useEffect, useState } from "react";
 import { api } from "../api";
 
-export function Logo({ size = 26 }: { size?: number }) {
-  // Cabide estilizado (arara de roupas).
+/** Símbolo do Repõe Aí!: seta de reposição girando em volta de uma camiseta. */
+export function BrandMark({ size = 32, tone = "dark" }: { size?: number; tone?: "dark" | "light" }) {
+  const bg = tone === "dark" ? "#5eead4" : "#0f766e";
+  const fg = tone === "dark" ? "#12312d" : "#ffffff";
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M16 6a3 3 0 1 1 3 3c-1.2 0-3 .8-3 2.5v1.2L4.5 21.5c-1 .8-.5 2.5.8 2.5h21.4c1.3 0 1.8-1.7.8-2.5L16 12.7" fill="none" stroke="#5eead4" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg className="brand-mark" width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="1" y="1" width="30" height="30" rx="8" fill={bg} />
+      <path d="M23.3 9.9A9.5 9.5 0 1 1 14.4 6.6" fill="none" stroke={fg} strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M13.6 3.6 18.4 6.3 14.6 10.2Z" fill={fg} stroke={fg} strokeWidth="1.2" strokeLinejoin="round" />
+      <path d="M13 12 10.5 13.4 11.4 15.5 12.8 15V20H19.2V15L20.6 15.5 21.5 13.4 19 12C18.6 12.9 17.4 13.5 16 13.5S13.4 12.9 13 12Z" fill={fg} />
     </svg>
+  );
+}
+
+/** Logo completa: símbolo + "Repõe Aí!" inclinado, com o "Aí!" em adesivo. */
+export function Logo({ size = 20, tone = "dark" }: { size?: number; tone?: "dark" | "light" }) {
+  return (
+    <span className={`brand ${tone}`} style={{ fontSize: size }} role="img" aria-label="Repõe Aí!">
+      <BrandMark size={size * 1.7} tone={tone} />
+      <span className="brand-word" aria-hidden="true">
+        <span className="rep">Repõe</span>
+        <span className="ai">Aí!</span>
+      </span>
+    </span>
   );
 }
 
