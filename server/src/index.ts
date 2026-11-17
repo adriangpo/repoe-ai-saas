@@ -13,7 +13,7 @@ async function main() {
   }
   createApp().listen(config.port, () => {
     console.log(`API do Arara em http://localhost:${config.port}`);
-    console.log(jevConfigured() ? "JEV: chave configurada." : "JEV: sem chave, o assistente de reposição usará as regras locais.");
+    console.log(jevConfigured() ? `JEV: chave configurada (${config.jevProvider}).` : "JEV: sem chave, o assistente de reposição usará as regras locais.");
   });
 }
 

@@ -71,11 +71,15 @@ Para voltar os dados de demonstração ao estado inicial: `npm run db:seed`.
 
 ### Usando o JEV (opcional)
 
-Sem chave, o assistente de reposição funciona com as regras locais. Para ativar a análise com IA, coloque sua chave da OpenRouter no `.env` e reinicie a API:
+Sem chave, o assistente de reposição funciona com as regras locais. Para ativar a análise com IA, coloque a chave no `.env` e reinicie a API. Vale a chave da OpenRouter ou a chave direta da TypeSafe; o endpoint é escolhido automaticamente:
 
 ```
-OPENROUTER_API_KEY=sk-or-...
+OPENROUTER_API_KEY=sk-or-...     # via OpenRouter
+# ou
+JEV_API_KEY=...                  # direto na TypeSafe
 ```
+
+Ao iniciar, a API mostra `JEV: chave configurada (OpenRouter)` ou avisa que vai usar as regras locais.
 
 ### Sem Docker
 
